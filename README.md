@@ -1,3 +1,16 @@
+# How I'm using this
+
+Use `301-dns-forwarder` to set up a DNS forwarder.
+
+Create the resources: `az group deployment create --resource-group mc_resourcegroup_schnitzel_francecentral --template-file ./azuredeploy.json --parameters authenticationType=password`
+
+Test DNS resolution (IP needs to be adjusted and match the DNS forwarder's IP):
+
+```dig @11.1.0.4 google.com
+dig @11.1.0.4 google.com
+dig @11.1.0.4 thing.subdomain.dg-schnitzel.com
+```
+
 # Azure Resource Manager QuickStart Templates
 
 This repo contains all currently available Azure Resource Manager templates contributed by the community. A searchable template index is maintained at [azure.com](https://azure.microsoft.com/en-us/documentation/templates/.)
